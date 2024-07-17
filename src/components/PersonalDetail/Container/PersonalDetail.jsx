@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +8,16 @@ import CountryList from "../services/CountryList";
 
 const PersonalDetailContainer = () => {
   const navigate = useNavigate();
+  const [renderNo, setrenderNo] = useState(1);
+  const validation = PersonaldetailsValidation(renderNo)
+  const maxSteps = 4;
+  const handleNext = () => {
+    setrenderNo((prev) => Math.min(prev + 1, 4));
+  };
 
+  const handlePrevious = () => {
+    setrenderNo((prev) => Math.max(prev - 1, 1));
+  };
   const {
     control,
     handleSubmit,
@@ -16,11 +25,16 @@ const PersonalDetailContainer = () => {
     reset,
     setError,
   } = useForm({
-    resolver: yupResolver(PersonaldetailsValidation()),
+    resolver: yupResolver(validation),
   });
   const onSubmit = async (formData) => {
     try {
-        console.log(formData,'ma hardio loan')
+      if (renderNo === 4) {
+        console.log(formData, "inside_submit");
+      } else {
+        handleNext()
+        console.log(formData, "ma hardio loan");
+      }
     } catch (error) {
       console.log(error, "errrror");
     }
@@ -36,6 +50,10 @@ const PersonalDetailContainer = () => {
         errors={errors}
         navigate={navigate}
         countryList={CountryList()}
+        renderNo={renderNo}
+        maxSteps={maxSteps}
+        handleNext={handleNext}
+        handlePrevious={handlePrevious}
       />
     </>
   );

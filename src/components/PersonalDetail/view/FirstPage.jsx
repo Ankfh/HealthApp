@@ -35,7 +35,7 @@ const FirstPage = (props) => {
           errors={props.errors}
         />
         <InputField
-          name="State"
+          name="state"
           control={props.control}
           label="State/Province "
           type="text"
@@ -66,13 +66,7 @@ const FirstPage = (props) => {
         type="text"
         errors={props.errors}
       />
-      <InputField
-        name="ethnicity"
-        control={props.control}
-        label="Ethnicity"
-        type="text"
-        errors={props.errors}
-      />
+     
       <InputField
         name="race"
         control={props.control}
@@ -120,13 +114,7 @@ const FirstPage = (props) => {
         type="text"
         errors={props.errors}
       />
-      <InputField
-        name="Participant"
-        control={props.control}
-        label="Participant Height "
-        type="text"
-        errors={props.errors}
-      />
+    
       <InputField
         name="BMI"
         control={props.control}
@@ -149,7 +137,7 @@ const FirstPage = (props) => {
         errors={props.errors}
       />
       <InputField
-        name="Any food Allergies"
+        name="allergies"
         control={props.control}
         label="Any food Allergies "
         type="text"

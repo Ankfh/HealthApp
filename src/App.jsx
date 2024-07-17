@@ -14,6 +14,7 @@ import ServicesContainer from "./components/servicesTab/container/ServicesContai
 import TeamContainer from "./components/Team/Container/TeamContainer";
 import AboutContainer from "./components/About/container/AboutContainer";
 import PersonalDetailContainer from "./components/PersonalDetail/Container/PersonalDetail";
+import BlogContianer from "./components/BlogDetail/container/BlogContianer";
 
 const App = () => {
   const userid = localStorage.getItem("user_id");
@@ -27,6 +28,7 @@ const App = () => {
             {/* <Route element={<PrivateRoute />}> */}
             <Route path="/nmnm" element={<HomeContainer />} />
             <Route path="/" element={<PersonalDetailContainer />} />
+            <Route path="/blogdetail/:id" element={<BlogContianer />} />
             {/* </Route> */}
             {/* <Route element={<PublicRoute />}> */}
             <Route path="/about" element={<AboutContainer />} />

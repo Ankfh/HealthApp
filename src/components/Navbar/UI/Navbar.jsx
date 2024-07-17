@@ -12,8 +12,7 @@ const Navbar = (props) => {
     <div className="  fixed w-full z-[99]">
       <div
         className={
-          color.bg +
-          " h-10 shadow-[0px_1px_0px_0px_blue] flex justify-center items-center"
+          " h-10 shadow-[0px_1px_0px_0px_blue] bg-[#3d928a] flex justify-center items-center"
         }
       >
         <div className="flex ml-1 w-full ">
@@ -21,11 +20,7 @@ const Navbar = (props) => {
         </div>
         <LinkView {...props} />
         <div className="flex justify-end w-full">
-          <Switch
-            checked={props.darkMode}
-            onChange={props.toggleTheme}
-            color="primary" // optional: you can set the color
-          />
+        
         </div>
         {props.capital && (
           <div>

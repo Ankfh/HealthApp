@@ -3,6 +3,7 @@ import InputField from "../../shared/InputField/UI/InputField";
 import MuiButton from "../../shared/Button/UI/MuiButton";
 import SelectInputView from "../../shared/SelectInput/view/SelectInputView";
 import renderFormPages from "../services/renderFormPages";
+import FormSlider from "./FormSlider";
 
 const PersonalDetailView = ({
   onSubmit,
@@ -11,14 +12,7 @@ const PersonalDetailView = ({
   errors,
   ...props
 }) => {
-  const [renderNo, setrenderNo] = useState(1);
-  const handleNext = () => {
-    setrenderNo((prev) => Math.min(prev + 1, 3));
-  };
 
-  const handlePrevious = () => {
-    setrenderNo((prev) => Math.max(prev - 1, 1));
-  };
   return (
     <div className="w-full flex justify-center items-center  ">
       <form
@@ -26,8 +20,9 @@ const PersonalDetailView = ({
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="flex w-full px-5 pt-16 pb-7   flex-col gap-8">
-          <p className="w-full text-center">Sign Up</p>
-          {renderFormPages(renderNo, { control, errors, ...props })}
+          <h2 className="w-full text-center font-bold text-lg">PLEASE ENTER YOUR DETAILS INFORMATION</h2>
+          <FormSlider renderNo={props.renderNo} maxSteps={props.maxSteps} />
+          {renderFormPages(props.renderNo, { control, errors, ...props })}
           <div className="w-full flex justify-between">
             <div>
               <MuiButton
@@ -35,7 +30,15 @@ const PersonalDetailView = ({
                 type="button"
                 title={"Previous"}
                 size={"small"}
-                onClick={handlePrevious}
+                onClick={props.handlePrevious}
+              />
+            </div>
+            <div>
+              <MuiButton
+                variant="contained"
+                type="submit"
+                title={"Previous"}
+                size={"small"}
               />
             </div>
             <div>
@@ -44,7 +47,7 @@ const PersonalDetailView = ({
                 type="button"
                 title={"Next"}
                 size={"small"}
-                onClick={handleNext}
+                onClick={props.handleNext}
               />
             </div>
           </div>

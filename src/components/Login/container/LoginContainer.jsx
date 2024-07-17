@@ -3,11 +3,12 @@ import { UseDArkTheme } from "../../DarkTheme/Context/ThemeContext";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 
-import LoginUI from "../view/LoginUI.jsx";
 import LoginValidtion from "../Helper/validation/LoginValidtion";
 import { SetBackendValidation } from "../../shared/validation/BackendValidtion/CustomValidation";
 import { useLoginUserMutation } from "../../../redux/Slice/user/userSlice.jsx";
 import { useNavigate } from "react-router-dom";
+import LoginFormUI from "../view/LoginFormUI.jsx";
+import LoginUI from "../view/LoginUI.jsx";
 
 const LoginContainer = () => {
   const [LoginUser, { isLoading }] = useLoginUserMutation();
@@ -56,6 +57,7 @@ const LoginContainer = () => {
         control={control}
         handleSubmit={handleSubmit}
         errors={errors}
+        navigate={navigate}
       />
     </div>
   );

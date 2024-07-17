@@ -4,11 +4,11 @@ import { blueGrey, indigo } from "@mui/material/colors";
 
 export const ButtonMui = styled(Button)(({ theme, bgColor }) => ({
   textTransform: "none",
-  backgroundColor: bgColor,
+  backgroundColor: bgColor?? '#26653F',
   color: "white",
   borderRadius: theme.shape.borderRadius,
   "&:hover": {
-    backgroundColor: bgColor,
+    backgroundColor: bgColor?? '#1D5433',
     color: "white",
   },
 }));

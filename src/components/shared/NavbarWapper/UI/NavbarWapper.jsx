@@ -7,10 +7,10 @@ const NavbarWapper = ({ children }) => {
   const { color } = useCssContext();
 
   return (
-    <div className={darkMode ? color.bg : `bg-green-100`}>
+    <>
       <NavbarContainer />
       {children}
-    </div>
+    </>
   );
 };
 

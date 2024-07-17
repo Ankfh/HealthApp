@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import SignUpMian from "../UI/SignUp_mainUI";
 import axios from "axios";
 import { baseUrl } from "../../../BaseURl/BaseUrl";
 import { UseDArkTheme } from "../../DarkTheme/Context/ThemeContext";
@@ -9,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { SetBackendValidation } from "../helper/BackendValidation/SetBackendValidation";
 import { useRegisterUserMutation } from "../../../redux/Slice/user/userSlice";
 import { useNavigate } from "react-router-dom";
+import SignUpUI from "../UI/SignUpUI";
 
 const SingUpContainer = () => {
   const [RegisterUser, { isLoading }] = useRegisterUserMutation();
@@ -49,11 +49,12 @@ const SingUpContainer = () => {
   };
   return (
     <div>
-      <SignUpMian
+      <SignUpUI
         onSubmit={onSubmit}
         control={control}
         handleSubmit={handleSubmit}
         errors={errors}
+        navigate={navigate}
       />
     </div>
   );

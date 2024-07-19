@@ -15,6 +15,7 @@ import TeamContainer from "./components/Team/Container/TeamContainer";
 import AboutContainer from "./components/About/container/AboutContainer";
 import PersonalDetailContainer from "./components/PersonalDetail/Container/PersonalDetail";
 import BlogContianer from "./components/BlogDetail/container/BlogContianer";
+import ServiceDetails from "./components/ServiceDeatails/container/ServiceDetails";
 
 const App = () => {
   const userid = localStorage.getItem("user_id");
@@ -26,9 +27,11 @@ const App = () => {
         <NavbarWapper>
           <Routes>
             {/* <Route element={<PrivateRoute />}> */}
-            <Route path="/nmnm" element={<HomeContainer />} />
+            <Route path="/" element={<HomeContainer />} />
             <Route path="/" element={<PersonalDetailContainer />} />
             <Route path="/blogdetail/:id" element={<BlogContianer />} />
+            <Route path="/service/:id" element={<ServiceDetails />} />
+
             {/* </Route> */}
             {/* <Route element={<PublicRoute />}> */}
             <Route path="/about" element={<AboutContainer />} />

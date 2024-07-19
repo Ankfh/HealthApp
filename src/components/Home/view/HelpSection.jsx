@@ -1,5 +1,5 @@
 import React from "react";
-import nutritionistImage from "../../../assets/one.png"; // replace with your image path
+import nutritionistImage from "../../../assets/service11.jpg"; // replace with your image path
 import chartImage from "../../../assets/two.png";
 import third from "../../../assets/third.png";
 
@@ -16,16 +16,6 @@ const HelpSection = () => {
             src={nutritionistImage}
             alt="Nutritionist"
             className="relative  w-50 h-80 rounded-lg shadow-lg"
-          />
-          <img
-            src={third}
-            alt="Chart"
-            className="absolute  top-1 ml-60  w-32 h-auto rounded-lg shadow-lg transform -translate-x-8 translate-y-8"
-          />
-          <img
-            src={chartImage}
-            alt="Chart"
-            className="absolute mb-0 w-32 h-auto rounded-lg shadow-lg transform -translate-x-8 translate-y-8"
           />
         </div>
         <div className="text-content md:w-1/2 mb-6 md:mb-0 ml-6">

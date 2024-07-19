@@ -1,11 +1,17 @@
-import React from 'react'
+// src/components/Blog.js
+import React from "react";
+import { Link } from "react-router-dom";
+import posts from "../data/blogData";
+import FooterUi from "../../shared/Footer/UI/FooterUi";
+import BlogList from "../view/BlogList";
 
 const Blog = () => {
   return (
-    <div className='flex justify-center items-center w-full h-screen'>
-      <h1>blogg</h1>
+    <div>
+      <BlogList />
+      <FooterUi />
     </div>
-  )
-}
+  );
+};
 
-export default Blog
+export default Blog;

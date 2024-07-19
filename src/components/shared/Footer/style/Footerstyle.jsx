@@ -14,10 +14,7 @@ const Footerstyle = () => {
       .footer a {
         color: black;
         text-decoration: none;
-        height: Hug (27px) px;
-        margin: 30px;
-        justify: space-between;
-        opacity: 0px;
+        margin: 0.5rem;
       }
       .footer a:hover {
         color: blue;
@@ -31,42 +28,57 @@ const Footerstyle = () => {
         max-width: 1200px;
         margin: 0 auto;
       }
+      .footer-logo {
+        margin-bottom: 1rem;
+      }
+      .logo-img {
+        width: 80px;
+        height: auto;
+      }
+      .footer-text {
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      .footer-links,
       .condition {
-        font-size: 10px;
-        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
       }
       .divider {
-        width: 1240px;
-        height: 4px;
-        top: 283px;
-        left: 100px;
-        gap: 0px;
-        opacity: 0px;
-
+        width: 100%;
+        height: 1px;
         background: radial-gradient(
           50% 50% at 50% 50%,
           #32794f 0%,
           rgba(50, 121, 79, 0) 100%
         );
+        margin: 1rem 0;
       }
-      @media (min-width: 768px) {
-        .footer-container {
-          flex-direction: row;
-          text-align: left;
-        }
-      }
-      .footer-logo {
+      .footer-socials {
+        display: flex;
+        gap: 1rem;
         margin-bottom: 1rem;
       }
-      .footer-logo h1 {
-      }
-      .footer-links {
+      .social-icon {
+        width: 32px;
+        height: 32px;
         display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+      }
+      .footer-bottom {
+        text-align: center;
+        font-size: 0.875rem;
+        color: #000000;
       }
       @media (min-width: 768px) {
-        .footer-links {
+        .footer-links,
+        .condition {
           flex-direction: row;
         }
       }

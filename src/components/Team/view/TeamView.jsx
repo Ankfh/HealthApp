@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import FounderProfile from "./FounderProfile";
 
 const TeamView = () => {
   return (
-    <div className='flex justify-center items-center w-full h-screen'>
-      <h1>team</h1>
+    <div className="pt-10">
+      <FounderProfile />
     </div>
-  )
-}
+  );
+};
 
-export default TeamView
+export default TeamView;

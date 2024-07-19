@@ -1,37 +1,10 @@
 import React from "react";
-import about1 from "../../../assets/about1.jpg"; // replace with your image path
-import about2 from "../../../assets/about2.jpg";
-import about3 from "../../../assets/about3.jpg";
 import banner from "../../../assets/banner.jpg";
 
 const AboutUs = () => {
   return (
     <div className="w-full bg-white">
       <div className="max-w-6xl mx-auto px-4 lg:px-8">
-        {/* Image Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-          <img
-            src={about1}
-            alt="Person 1"
-            className="w-full h-80 object-cover"
-          />
-          <img
-            src={about2}
-            alt="Person 2"
-            className="w-full h-80 object-contain "
-          />
-          <img
-            src={about3}
-            alt="Person 3"
-            className="w-full h-80 object-cover"
-          />
-          <img
-            src={about3}
-            alt="Person 3"
-            className="w-full h-80 object-cover "
-          />
-        </div>
-
         {/* Text Section */}
         <div className="mt-20 ">
           <div className="w-full ">

@@ -2,7 +2,11 @@ import { baseUrl } from "../../../BaseURl/BaseUrl";
 
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { RegisterUserApi } from "../../../components/SignUP/api/RegisterUserApi";
-import { LoginUserApi, getUser } from "../../../components/Login/api/LoginUserApi";
+import {
+  LoginUserApi,
+  getUser,
+} from "../../../components/Login/api/LoginUserApi";
+import { addUserDetail } from "../../../components/PersonalDetail/api/UserDetailsApis";
 
 const baseQuery = fetchBaseQuery({ baseUrl: ` ${baseUrl}/user` });
 
@@ -23,8 +27,17 @@ export const userSlice = createApi({
       query: getUser,
       providesTags: ["User"],
     }),
+    AddUserDetail: builder.mutation({
+      query: addUserDetail,
+      invalidatesTags: ["User"],
+    }),
     // Add more endpoints as needed
   }),
 });
 
-export const { useRegisterUserMutation, useLoginUserMutation,useGetUserInfoQuery } = userSlice;
+export const {
+  useRegisterUserMutation,
+  useLoginUserMutation,
+  useGetUserInfoQuery,
+  useAddUserDetailMutation,
+} = userSlice;

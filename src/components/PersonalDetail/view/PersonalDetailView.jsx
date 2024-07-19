@@ -12,7 +12,6 @@ const PersonalDetailView = ({
   errors,
   ...props
 }) => {
-
   return (
     <div className="w-full flex justify-center items-center  ">
       <form
@@ -20,7 +19,9 @@ const PersonalDetailView = ({
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="flex w-full px-5 pt-16 pb-7   flex-col gap-8">
-          <h2 className="w-full text-center font-bold text-lg">PLEASE ENTER YOUR DETAILS INFORMATION</h2>
+          <h2 className="w-full text-center font-bold text-lg">
+            PLEASE ENTER YOUR DETAILS INFORMATION
+          </h2>
           <FormSlider renderNo={props.renderNo} maxSteps={props.maxSteps} />
           {renderFormPages(props.renderNo, { control, errors, ...props })}
           <div className="w-full flex justify-between">
@@ -33,21 +34,13 @@ const PersonalDetailView = ({
                 onClick={props.handlePrevious}
               />
             </div>
+
             <div>
               <MuiButton
                 variant="contained"
                 type="submit"
-                title={"Previous"}
+                title={props.renderNo === 4 ? "Send Message" : "Next"}
                 size={"small"}
-              />
-            </div>
-            <div>
-              <MuiButton
-                variant="contained"
-                type="button"
-                title={"Next"}
-                size={"small"}
-                onClick={props.handleNext}
               />
             </div>
           </div>

@@ -38,7 +38,8 @@ const SingUpContainer = () => {
           : null;
       }
       if (data?.success) {
-        navigate("/login");
+        localStorage.setItem("_id", data.data?._id);
+        navigate("/detail");
       }
       console.log(isLoading, "isLoading");
     } catch (error) {

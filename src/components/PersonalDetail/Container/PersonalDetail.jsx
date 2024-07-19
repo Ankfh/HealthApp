@@ -5,11 +5,13 @@ import { useNavigate } from "react-router-dom";
 import PersonaldetailsValidation from "../validation/PersonalPagesValidation";
 import PersonalDetailView from "../view/PersonalDetailView";
 import CountryList from "../services/CountryList";
+import { useAddUserDetailMutation } from "../../../redux/Slice/user/userSlice";
 
 const PersonalDetailContainer = () => {
+  const [AddUserDetail, { isLoading }] = useAddUserDetailMutation();
   const navigate = useNavigate();
   const [renderNo, setrenderNo] = useState(1);
-  const validation = PersonaldetailsValidation(renderNo)
+  const validation = PersonaldetailsValidation(renderNo);
   const maxSteps = 4;
   const handleNext = () => {
     setrenderNo((prev) => Math.min(prev + 1, 4));
@@ -30,9 +32,14 @@ const PersonalDetailContainer = () => {
   const onSubmit = async (formData) => {
     try {
       if (renderNo === 4) {
+        const userid = localStorage.getItem("_id");
+        formData = { ...formData, userId: userid };
+        const { error, data } = await AddUserDetail(formData);
         console.log(formData, "inside_submit");
+        console.log(data, "idata");
+        navigate("/appointment");
       } else {
-        handleNext()
+        handleNext();
         console.log(formData, "ma hardio loan");
       }
     } catch (error) {

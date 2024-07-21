@@ -4,7 +4,7 @@ const MuiButton = ({ type, title, size, bgColor, onClick = () => {} }) => {
   return (
     <ButtonMui
       onClick={onClick}
-      className=""
+      className="bg-orange-60"
       type={type}
       size={size}
       bgColor={bgColor}

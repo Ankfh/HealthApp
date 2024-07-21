@@ -14,7 +14,7 @@ const AboutUs = () => {
             <img
               src={banner}
               alt="Studio Setup"
-              className="w-full h-auto mt-2"
+              className="w-full h-auto mt-2 border-2 border-orange-400"
             />
           </div>
           <div className="w-full lg:w-1/2 mt-20 lg:mt-5">

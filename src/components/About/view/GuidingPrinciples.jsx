@@ -3,13 +3,17 @@ import two from "../image/one.png";
 import one from "../image/two.png";
 import third from "../image/third.png";
 import fourth from "../image/fouth.jpeg";
+import fifth from "../../../assets/service7.jpg";
+import six from "../../../assets/service8.jpg";
+import seven from "../../../assets/service10.png";
+import eight from "../../../assets/service11.jpg";
 
 const principles = [
   {
     title: "CDC Guideline for Diabetes Prevention and Weight Loss",
     description:
       "Rooted in scientific rigor, this guideline serves as a cornerstone for our philosophy, emphasizing proactive measures for health maintenance.",
-    image: two,
+    image: one,
   },
   {
     title: "Haylie Pomroy’s Fast Metabolism Diet program (FMD)",
@@ -21,14 +25,14 @@ const principles = [
     title: "Michael Pollan’s Food Rules",
     description:
       "Pollan’s renowned wisdom simplifies the complex landscape of nutrition, offering practical guidance on making wholesome food choices. With his principles at our core, we navigate the intricacies of dietary decisions with clarity and purpose.",
-    image: one,
+    image: fifth,
   },
   {
     title:
       "Alice Water’s Farm To Table principles from Berkeley Food Institute “Edible 101”",
     description:
       "Grounded in sustainability and community, this ethos underscores our commitment to sourcing fresh, locally-produced ingredients. By championing the Farm to Table movement, we honor the interconnectedness of food systems and foster a deeper appreciation for the nourishment it provides.",
-    image: one,
+    image: six,
   },
   {
     title: "Maharishi (Saint) Vagbhad’s Ayurvedic philosophy",
@@ -40,7 +44,7 @@ const principles = [
     title: "Deepak Chopra’s Philosophy",
     description:
       "In aligning with Chopra’s holistic approach to spiritual and physical vitality, we embrace the timeless wisdom of the Seven Laws of Spiritual Success and Ageless Body Timeless Mind. By integrating mind-body practices into our philosophy, we cultivate resilience and vitality that transcends the limitations of age.",
-    image: third,
+    image: seven,
   },
   {
     title: "Arkaya Yoga Philosophy",
@@ -52,7 +56,7 @@ const principles = [
     title: "Dan Buettner’s Bluezone Longevity project",
     description:
       "“The calculus of aging offers us two options: We can live a shorter life with more years of disability, or we can live the longest possible life with the fewest bad years. As my centenarian friends have shown me, the choice is largely up to us.” – Dan Buettner",
-    image: fourth,
+    image: eight,
   },
 ];
 

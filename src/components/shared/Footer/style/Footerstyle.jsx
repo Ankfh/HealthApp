@@ -17,7 +17,8 @@ const Footerstyle = () => {
         margin: 0.5rem;
       }
       .footer a:hover {
-        color: blue;
+        color: #f95700;
+        font-weight: bold;
       }
       .footer-container {
         display: flex;

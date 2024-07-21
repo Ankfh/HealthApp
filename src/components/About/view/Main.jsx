@@ -1,6 +1,7 @@
 import React from "react";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import service8 from "../../../assets/service8.jpg";
+import service9 from "../../../assets/Rectangle 33.png";
 
 const Main = () => {
   return (
@@ -49,11 +50,19 @@ const Main = () => {
             <span>Cheat Suggestions</span>
           </div>
         </div>
-        <div className="lg:col-span-1 flex justify-center items-center">
-          <img src={service8} alt="Example" className="rounded " />
+        <div className="lg:col-span-1 flex justify-center items-center h-50">
+          <img
+            src={service8}
+            alt="Example"
+            className="rounded border-2 border-orange-400"
+          />
         </div>
         <div className="lg:col-span-1 flex justify-center items-center">
-          <img src={service8} alt="Example" className="rounded " />
+          <img
+            src={service9}
+            alt="Example"
+            className="rounded  h-60 border-2 border-orange-400"
+          />
         </div>
       </div>
       <div className="mt-10 bg-orange-600  p-4  shadow-md text-center m-20 uppercase font-bold">

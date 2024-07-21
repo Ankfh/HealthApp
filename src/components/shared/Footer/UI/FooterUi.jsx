@@ -22,19 +22,18 @@ const FooterUi = () => {
           </p>
         </div>
         <div className="footer-links">
-          <a href="#">Home</a>
-          <a href="#about">About</a>
-          <a href="#blog">Blog</a>
-          <a href="#services">Services</a>
-          <a href="#community">Community</a>
-          <a href="#signin">SignIn</a>
+          <a href="">Home</a>
+          <a href="about">About</a>
+          <a href="blog">Blog</a>
+          <a href="services">Services</a>
+          <a href="login">LogIn</a>
         </div>
         <div className="condition">
           <a href="#">Term&Conditions</a>
           <a href="#">Privacy Policy</a>
-          <a href="#blog">Contact</a>
-          <a href="#services">Cookies Policy</a>
-          <a href="#community">Support</a>
+          <a href="#">Contact</a>
+          <a href="#">Cookies Policy</a>
+          <a href="#">Support</a>
         </div>
         <div className="divider"></div>
         <div className="footer-socials">
@@ -53,7 +52,8 @@ const FooterUi = () => {
         </div>
         <div className="divider"></div>
         <div className="footer-bottom">
-          &copy; 2024 Mindful Living Club. All rights reserved.
+          &copy; <span className="">2024 Mindful Living Club.</span> All rights
+          reserved.
         </div>
       </div>
     </footer>

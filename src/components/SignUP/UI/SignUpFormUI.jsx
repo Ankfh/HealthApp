@@ -19,7 +19,9 @@ const SignUpFormUI = ({
     <div className="w-full flex justify-center items-center h-screen ">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex w-full md:w-[24rem] flex-col gap-8">
-          <p className="w-full text-center">Sign Up</p>
+          <p className="w-full text-center text-orange-600 font-bold">
+            Sign Up
+          </p>
           <div className="flex  flex-col gap-10">
             <InputField
               name="name"
@@ -58,7 +60,7 @@ const SignUpFormUI = ({
               Already have an account:{" "}
               <span
                 onClick={() => props.navigate("/login")}
-                className="text-green-900 cursor-pointer "
+                className="text-orange-600 cursor-pointer "
               >
                 Login
               </span>{" "}

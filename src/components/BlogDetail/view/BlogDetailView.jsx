@@ -14,18 +14,20 @@ const BlogDetailView = () => {
   return (
     <>
       <div className="flex flex-col items-center bg-white">
-        <div className="bg-white w-full md:w-3/4 lg:w-3/3 xl:w-2/2 m-4 pt-20">
+        <div className="bg-white w-full sm:w-5/6 md:w-4/5 lg:w-3/4 xl:w-2/3 m-4 pt-20">
           <img
             src={post.image}
             alt={post.name}
-            className="w-full h-96 object-cover mb-6"
+            className="w-full h-auto max-h-[500px] object-cover mb-6"
           />
-          <div className="p-6">
-            <h2 className="text-4xl font-bold text-black mb-4 ">{post.name}</h2>
+          <div className="p-4 sm:p-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4">
+              {post.name}
+            </h2>
             {post.content.map((paragraph, index) => (
               <p
                 key={index}
-                className={`text-black leading-relaxed text-justify p-4 paragraph-${index}`}
+                className="text-base sm:text-lg md:text-xl text-black leading-relaxed text-justify mb-4"
               >
                 {paragraph}
               </p>

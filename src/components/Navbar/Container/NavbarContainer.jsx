@@ -3,10 +3,11 @@ import Navbar from "../UI/Navbar";
 import { UseDArkTheme } from "../../DarkTheme/Context/ThemeContext";
 import { oNlogoutClick } from "../services/NavbarServices";
 import { useNavigate } from "react-router-dom";
+import { useGlobalState } from "../../Global/context/GlobalStateProvider";
 
 const NavbarContainer = () => {
   const { darkMode, toggleTheme } = UseDArkTheme();
-  const [selectedTab, setselectedTab] = useState("HOME");
+  const { setselectedTab, selectedTab } = useGlobalState();
   const navigate = useNavigate();
   const logoutClick = () => {
     oNlogoutClick(navigate);
@@ -14,6 +15,9 @@ const NavbarContainer = () => {
   const capital =
     localStorage.getItem("user_name")?.trim()?.charAt(0)?.toUpperCase() ?? null;
 
+  const buttonClick = () => {
+    navigate("/signup");
+  };
   return (
     <Navbar
       toggleTheme={toggleTheme}
@@ -23,6 +27,7 @@ const NavbarContainer = () => {
       setselectedTab={setselectedTab}
       selectedTab={selectedTab}
       navigate={navigate}
+      buttonClick={buttonClick}
     />
   );
 };

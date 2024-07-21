@@ -4,7 +4,7 @@ import SharedLink from "./SharedLink";
 const LinkView = (props) => {
   const menu = ["HOME", "ABOUT", "BLOG", "SERVICES", "TEAM", "COMMUNITY"];
   return (
-    <div className="flex space-x-1">
+    <div className="  md:flex  space-x-1">
       {menu.map((item, index) => (
         <SharedLink key={index} menu={item} {...props} />
       ))}

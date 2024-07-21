@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useGlobalState } from "../../Global/context/GlobalStateProvider";
 
 const ServiceDetails = ({ service, onBackClick }) => {
+  const { setselectedTab, selectedTab } = useGlobalState();
+  useEffect(() => {
+    setselectedTab("SERVICES");
+  }, []);
   return (
     <div className="bg-white p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
       <button

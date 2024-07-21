@@ -4,6 +4,7 @@ import LogoUI from "./LogoUI";
 import Logout from "./Logout";
 import { useCssContext } from "../../CssContext/context/CssContex";
 import LinkView from "./LinkView";
+import JoinUs from "./JoinUs";
 
 const Navbar = (props) => {
   const { color } = useCssContext();
@@ -19,8 +20,8 @@ const Navbar = (props) => {
           <LogoUI capital={props.capital} />
         </div>
         <LinkView {...props} />
-        <div className="flex justify-end w-full">
-        
+        <div className="flex justify-center w-full">
+          <JoinUs {...props} />
         </div>
         {props.capital && (
           <div>

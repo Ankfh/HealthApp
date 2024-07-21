@@ -88,6 +88,10 @@ const Testimonials = () => {
           </svg>
         </button>
       </div>
+      <h1 className="mt-40  text-center font-semibold ">
+        A whole year of <b className="text-red-700">HEALTHYBITE </b>costs about
+        the same as 1 hour with a nutrition expert
+      </h1>
     </div>
   );
 };

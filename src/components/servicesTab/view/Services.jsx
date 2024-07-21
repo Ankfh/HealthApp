@@ -5,6 +5,9 @@ import service1 from "../../../assets/service1.jpg";
 import service2 from "../../../assets/service2.jpg";
 import service3 from "../../../assets/service3.jpg";
 import service4 from "../../../assets/service4.jpg";
+import WhatYouGet from "./WhatYouGet";
+import Testimonials from "./../../About/view/Testimonials";
+import FooterUi from "./../../shared/Footer/UI/FooterUi";
 
 const services = [
   {
@@ -71,38 +74,48 @@ const Services = () => {
   };
 
   return (
-    <div className="bg-gray-100 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {selectedService ? (
-          <ServiceDetails
-            service={selectedService}
-            onBackClick={handleBackClick}
-          />
-        ) : (
-          <>
-            <div className="text-center">
-              <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">
-                Our Services
-              </h2>
-              <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                Tailored Solutions for Your Needs
-              </p>
-              <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-                Explore our range of services designed to help you achieve your
-                goals.
-              </p>
-            </div>
+    <>
+      <div className="bg-gray-100 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {selectedService ? (
+            <ServiceDetails
+              service={selectedService}
+              onBackClick={handleBackClick}
+            />
+          ) : (
+            <>
+              <div className="text-center">
+                <h2 className="text-base text-orange-600 text-[40px] font-extrabold tracking-wide uppercase pt-10">
+                  Our Services
+                </h2>
+                <p className="mt-8 text-3xl leading-8  tracking-tight font-semibold sm:text-4xl">
+                  Tailored Solutions For Your Needs
+                </p>
+                <p className="mt-4 max-w-2xl text-xl bg-orange-600 font-semibold p-4 mx-auto text-auto border-e-4 rounded-md text-white">
+                  Explore our range of services designed to help you achieve
+                  your goals.
+                </p>
+              </div>
+              <div class="w-full h-px bg-green-500 my-4 mt-10"></div>
 
-            <div className="mt-10">
-              <ServicesList
-                services={services}
-                onServiceClick={handleServiceClick}
-              />
-            </div>
-          </>
-        )}
+              <div className="mt-10">
+                <ServicesList
+                  services={services}
+                  onServiceClick={handleServiceClick}
+                />
+              </div>
+              <div className="mt-20">
+                <WhatYouGet />
+              </div>
+              <div>
+                <Testimonials />
+              </div>
+            </>
+          )}
+        </div>
       </div>
-    </div>
+      <FooterUi />
+    </>
   );
 };
 

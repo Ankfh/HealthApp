@@ -7,7 +7,7 @@ import FooterUi from "./../../shared/Footer/UI/FooterUi";
 
 const About = () => {
   return (
-    <div className="pt-20  text-center">
+    <div className="pt-10">
       <Main />
       <GuidingPrinciples />
       <Message />

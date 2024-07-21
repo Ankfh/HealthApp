@@ -4,17 +4,17 @@ const ServiceDetails = ({ service, onBackClick }) => {
   return (
     <div className="bg-white p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
       <button
-        className="text-indigo-600 font-semibold mb-4"
+        className="bg-orange-600 py-2 px-8 font-semibold rounded-sm mb-4 text-white hover:bg-orange-500 hover:text-black"
         onClick={onBackClick}
       >
-        Back to Services
+        BACK TO SERVICES
       </button>
       <div className="w-full flex justify-center mb-6">
         <img
           src={service.icon}
           alt={service.title}
           className="w-full h-200 object-cover rounded-md shadow-md"
-          style={{ width: "280px", height: "280px" }} // Adjusting size to 70x70 with custom style
+          style={{ width: "700px", height: "380px" }}
         />
       </div>
       <h3 className="text-3xl leading-8 font-bold text-gray-900 text-center">

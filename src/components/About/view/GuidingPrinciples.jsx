@@ -58,11 +58,11 @@ const principles = [
 
 const GuidingPrinciples = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-center mb-8">
+    <div className="container mx-auto px-10 py-4">
+      <h1 className="text-3xl font-bold text-center mb-6">
         Guiding Principles
       </h1>
-      <p className="text-center mb-12">
+      <p className="text-center mb-8">
         Our guiding principles encompass a holistic approach to health and
         well-being, drawing from a diverse array of esteemed sources:
       </p>
@@ -70,16 +70,20 @@ const GuidingPrinciples = () => {
         {principles.map((principle, index) => (
           <div
             key={index}
-            className="bg-white rounded-lg shadow-md overflow-hidden"
+            className="bg-white shadow-md overflow-hidden flex flex-col items-center"
           >
             <img
-              className="w-full h-48 object-cover"
+              className="w-3/4 h-80 object-cover"
               src={principle.image}
               alt={principle.title}
             />
-            <div className="p-6">
-              <h2 className="text-xl font-semibold mb-4">{principle.title}</h2>
-              <p className="text-gray-700">{principle.description}</p>
+            <div className=" w-3/4">
+              <h2 className=" font-semibold mb-2 bg-orange-600 p-2 text-white text-center">
+                {principle.title}
+              </h2>
+              <p className="text-gray-700 text-justify">
+                {principle.description}
+              </p>
             </div>
           </div>
         ))}

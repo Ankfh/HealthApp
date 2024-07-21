@@ -16,13 +16,15 @@ const Blog = () => {
               className="w-full h-40 object-cover rounded-t-lg"
             />
             <h2 className="text-2xl font-bold mt-5">{post.name}</h2>
-            <p className="text-gray-700 mt-3">{post.summary}</p>
-            <Link
-              to={`/blogdetail/${post.id}`}
-              className="text-blue-500 hover:underline mt-3 block"
-            >
-              Read more
-            </Link>
+            <p className="text-gray-700 mt-3">
+              {post.summary}
+              <Link
+                to={`/blogdetail/${post.id}`}
+                className="text-gray-700 hover:underline hover:to-black mt-3 block"
+              >
+                Read more
+              </Link>
+            </p>
           </div>
         ))}
       </div>

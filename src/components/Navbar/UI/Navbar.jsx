@@ -1,4 +1,3 @@
-import { Switch } from "@mui/material";
 import React, { useState } from "react";
 import LogoUI from "./LogoUI";
 import Logout from "./Logout";
@@ -13,12 +12,12 @@ const Navbar = (props) => {
 
   const handleLogout = () => {
     setIsLoggedIn(false);
-    setSelectedTab("");
+    setSelectedTab(""); // Optionally, reset the selected tab
   };
 
   return (
     <div className="fixed w-full z-[99]">
-      <div className="h-[60px] shadow-[0px_1px_0px_0px_orange] bg-[#f95700] flex justify-end items-center ">
+      <div className="h-[60px] shadow-[0px_1px_0px_0px_orange] bg-[#f95700] flex justify-end items-center pl-50">
         <div className="flex ml-1 w-full">
           <LogoUI capital={props.capital} />
         </div>

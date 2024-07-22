@@ -19,7 +19,7 @@ const PersonalDetailView = ({
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="flex w-full px-5 pt-16 pb-7   flex-col gap-8">
-          <h2 className="w-full text-center font-bold text-lg">
+          <h2 className="w-full text-center font-bold text-lg pt-10">
             PLEASE ENTER YOUR DETAILS INFORMATION
           </h2>
           <FormSlider renderNo={props.renderNo} maxSteps={props.maxSteps} />
@@ -39,7 +39,7 @@ const PersonalDetailView = ({
               <MuiButton
                 variant="contained"
                 type="submit"
-                title={props.renderNo === 4 ? "Send Message" : "Next"}
+                title={props.renderNo === 4 ? "SUBMIT" : "Next"}
                 size={"small"}
               />
             </div>

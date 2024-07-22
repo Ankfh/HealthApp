@@ -9,7 +9,7 @@ const LinkView = (props) => {
     "SERVICES",
     "TEAM",
     "COMMUNITY",
-    props.isLoggedIn ? "MYACCOUNT" : "LOGIN",
+    props.isLoggedIn ? "MY ACCOUNT" : "LOGIN",
   ];
 
   return (

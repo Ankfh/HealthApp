@@ -2,10 +2,13 @@ import React from "react";
 import OnTabClicked from "../services/OnTabClicked";
 
 const SharedLink = (props) => {
-  const handleClick = () => {
+  const handleClick = async () => {
     if (props.menu === "LOGIN" && !props.isLoggedIn) {
       // Simulate login process
-      props.setIsLoggedIn(true);
+      const loginSuccessful = await mockLogin();
+      if (loginSuccessful) {
+        props.setIsLoggedIn(true);
+      }
     }
     OnTabClicked(props.setSelectedTab, props.navigate, props.menu);
   };

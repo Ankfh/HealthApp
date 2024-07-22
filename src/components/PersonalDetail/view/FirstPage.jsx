@@ -59,14 +59,26 @@ const FirstPage = (props) => {
         errors={props.errors}
       />
 
-      <InputField
+      <SelectInputView
         name="ethnicity"
         control={props.control}
         label="Ethnicity"
         type="text"
         errors={props.errors}
+        options={[
+          { value: "asian", label: "Asian" },
+          { value: "black", label: "Black or African American" },
+          { value: "hispanic", label: "Hispanic or Latino" },
+          { value: "white", label: "White" },
+          { value: "native", label: "Native American or Alaska Native" },
+          {
+            value: "pacific",
+            label: "Native Hawaiian or Other Pacific Islander",
+          },
+          { value: "other", label: "Other" },
+        ]}
       />
-     
+
       <InputField
         name="race"
         control={props.control}
@@ -114,7 +126,7 @@ const FirstPage = (props) => {
         type="text"
         errors={props.errors}
       />
-    
+
       <InputField
         name="BMI"
         control={props.control}

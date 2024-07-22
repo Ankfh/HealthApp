@@ -85,7 +85,7 @@ const Services = () => {
           ) : (
             <>
               <div className="text-center">
-                <h2 className="text-base text-orange-600 text-[40px] font-extrabold tracking-wide uppercase pt-10">
+                <h2 className="text-base text-orange-600 text-[42px] font-extrabold tracking-wide uppercase pt-10">
                   Our Services
                 </h2>
                 <p className="mt-8 text-3xl leading-8  tracking-tight font-semibold sm:text-4xl">

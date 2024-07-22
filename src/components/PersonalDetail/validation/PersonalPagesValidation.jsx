@@ -19,7 +19,7 @@ const PersonaldetailsValidation = (page) => {
     BMI: number().required("BMI is required"),
     phone: string().required("Phone is required"),
     DOB: number().required("DOB is required"),
-    allergies: string().required("Any food Allergies is required"),
+    // allergies: string().required("Any food Allergies is required"),
   });
 
   const secondpageValidation = object().shape({
@@ -52,24 +52,24 @@ const PersonaldetailsValidation = (page) => {
   });
 
   const fourthpageValidtion = object().shape({
-    sedimentation_rate: string().required(
-      "Erythrocyte sedimentation rate is required"
-    ),
-    cbc: string().required("Complete blood count CBC is required"),
-    fasting_glucose: string().required("Fasting Glucose is required"),
-    bun: string().required("Blood Urea Nitrogen is required"),
-    creatinine: string().required("Creatinine is required"),
-    calcium: string().required("Calcium is required"),
-    lipid_panel: string().required("Lipid Panel is required"),
-    triglycerides: string().required("Triglycerides is required"),
-    hdl: string().required("HDL is required"),
-    cholesterol: string().required("Cholesterol is required"),
-    ldl: string().required("LDL is required"),
-    hba1c: string().required("HBA1c is required"),
-    vit_d: string().required("Vit-D is required"),
-    b12: string().required("B12 is required"),
-    homocysteine: string().required("Homocysteine is required"),
-    tft_thyroid: string().required("TFT- Thyroid is required"),
+    // sedimentation_rate: string().required(
+    //   "Erythrocyte sedimentation rate is required"
+    // ),
+    // cbc: string().required("Complete blood count CBC is required"),
+    // fasting_glucose: string().required("Fasting Glucose is required"),
+    // bun: string().required("Blood Urea Nitrogen is required"),
+    // creatinine: string().required("Creatinine is required"),
+    // calcium: string().required("Calcium is required"),
+    // lipid_panel: string().required("Lipid Panel is required"),
+    // triglycerides: string().required("Triglycerides is required"),
+    // hdl: string().required("HDL is required"),
+    // cholesterol: string().required("Cholesterol is required"),
+    // ldl: string().required("LDL is required"),
+    // hba1c: string().required("HBA1c is required"),
+    // vit_d: string().required("Vit-D is required"),
+    // b12: string().required("B12 is required"),
+    // homocysteine: string().required("Homocysteine is required"),
+    // tft_thyroid: string().required("TFT- Thyroid is required"),
   });
 
   switch (page) {

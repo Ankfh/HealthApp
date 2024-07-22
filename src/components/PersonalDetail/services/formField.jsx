@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const formField = () => {
   return [
@@ -17,8 +17,8 @@ const formField = () => {
     { label: "Vit-D", name: "vit_d" },
     { label: "B12", name: "b12" },
     { label: "Homocysteine", name: "homocysteine" },
-    { label: "TFT- Thyroid", name: "tft_thyroid" }
+    { label: "TFT- Thyroid", name: "tft_thyroid" },
   ];
-}
+};
 
 export default formField;

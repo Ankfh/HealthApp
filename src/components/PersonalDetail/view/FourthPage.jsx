@@ -22,13 +22,25 @@ const FourthPage = (props) => {
           <SelectInputView
             name="testType"
             control={props.control}
-            label="testType"
+            label="Select"
             type="text"
             errors={props.errors}
             options={[
-              { value: "male", label: "Male" },
-              { value: "female", label: "Female" },
-              { value: "other", label: "Other" },
+              { value: "cbc", label: "Complete blood count CBC" },
+              { value: "ery", label: "Erythrocyte sedimentation rate" },
+              { value: "nit", label: "Blood Urea Nitrogen" },
+              { value: "cre", label: "Creatinine" },
+              { value: "cal", label: "Calcium" },
+              { value: "lip", label: "Lipid Panel" },
+              { value: "tri", label: "Triglycerides" },
+              { value: "hdl", label: "HDL" },
+              { value: "cho", label: "Cholesterol" },
+              { value: "ldl", label: "LDL" },
+              { value: "hba", label: "HBA1c" },
+              { value: "vit", label: "Vit-D" },
+              { value: "b12", label: "B12" },
+              { value: "hom", label: "Homocysteine" },
+              { value: "tft", label: "TFT- Thyroid" },
             ]}
           />
         </div>

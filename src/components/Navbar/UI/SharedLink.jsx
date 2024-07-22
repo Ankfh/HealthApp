@@ -2,14 +2,20 @@ import React from "react";
 import OnTabClicked from "../services/OnTabClicked";
 
 const SharedLink = (props) => {
+  const handleClick = () => {
+    if (props.menu === "LOGIN" && !props.isLoggedIn) {
+      // Simulate login process
+      props.setIsLoggedIn(true);
+    }
+    OnTabClicked(props.setSelectedTab, props.navigate, props.menu);
+  };
+
   return (
     <div
-      onClick={() =>
-        OnTabClicked(props.setselectedTab, props.navigate, props.menu)
-      }
-      className={`bg-customGreen  px-4 py-2 flex items-center justify-center font-bold cursor-pointer transition duration-300 hover:text-white ${
+      onClick={handleClick}
+      className={`bg-[#f95700] px-4 py-2 flex items-center justify-center font-bold cursor-pointer transition duration-300 hover:text-white ${
         props.selectedTab === props.menu ? "text-white" : "text-black"
-      } `}
+      }`}
     >
       {props.menu}
     </div>

@@ -17,9 +17,11 @@ const FounderProfile = () => {
         </h2>
       </div>
       <div className="flex justify-center items-center h-full">
-        <div className="bg-black bg-opacity-50 p-6 m-5 text-left w-4/5 max-w-lg">
-          <h1 className="text-3xl m-0 p-5 bg-orange-600 ">Founder Profile</h1>
-          <p>
+        <div className=" p-6 m-5 text-left w-4/5 max-w-lg bg-orange-600">
+          <h1 className="text-3xl m-0 p-4 bg-white text-black border-2 border-orange-300  rounded-md text-center">
+            Founder Profile
+          </h1>
+          <p className=" p-4 text-justify">
             Bushra, our founder, is a healthcare professional with over 20 years
             of experience. She is a passionate advocate and an innovator in
             holistic health and chronic care management. She is a Certified CDC

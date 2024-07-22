@@ -1,5 +1,5 @@
 import { Switch } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import LogoUI from "./LogoUI";
 import Logout from "./Logout";
 import { useCssContext } from "../../CssContext/context/CssContex";
@@ -8,24 +8,33 @@ import JoinUs from "./JoinUs";
 
 const Navbar = (props) => {
   const { color } = useCssContext();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [selectedTab, setSelectedTab] = useState("");
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setSelectedTab("");
+  };
 
   return (
-    <div className="  fixed w-full z-[99]">
-      <div
-        className={
-          " h-10 shadow-[0px_1px_0px_0px_blue] bg-[#3d928a] flex justify-center items-center"
-        }
-      >
-        <div className="flex ml-1 w-full ">
+    <div className="fixed w-full z-[99]">
+      <div className="h-[60px] shadow-[0px_1px_0px_0px_orange] bg-[#f95700] flex justify-end items-center ">
+        <div className="flex ml-1 w-full">
           <LogoUI capital={props.capital} />
         </div>
-        <LinkView {...props} />
+        <LinkView
+          {...props}
+          isLoggedIn={isLoggedIn}
+          setIsLoggedIn={setIsLoggedIn}
+          selectedTab={selectedTab}
+          setSelectedTab={setSelectedTab}
+        />
         <div className="flex justify-center w-full">
           <JoinUs {...props} />
         </div>
-        {props.capital && (
+        {isLoggedIn && (
           <div>
-            <Logout {...props} bgColor={color.button_bg} />
+            <Logout logoutClick={handleLogout} bgColor={color.button_bg} />
           </div>
         )}
       </div>

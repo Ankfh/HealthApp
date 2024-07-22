@@ -4,6 +4,7 @@ import { UseDArkTheme } from "../../DarkTheme/Context/ThemeContext";
 import { oNlogoutClick } from "../services/NavbarServices";
 import { useNavigate } from "react-router-dom";
 import { useGlobalState } from "../../Global/context/GlobalStateProvider";
+import logo from "../../../assets/logo.png";
 
 const NavbarContainer = () => {
   const { darkMode, toggleTheme } = UseDArkTheme();
@@ -22,7 +23,7 @@ const NavbarContainer = () => {
     <Navbar
       toggleTheme={toggleTheme}
       darkMode={darkMode}
-      capital={capital}
+      capital={logo}
       logoutClick={logoutClick}
       setselectedTab={setselectedTab}
       selectedTab={selectedTab}

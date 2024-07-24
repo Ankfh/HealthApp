@@ -18,6 +18,7 @@ import BlogContianer from "./components/BlogDetail/container/BlogContianer";
 import AppointmentContainer from "./components/Appointment/container/AppointmentContainer";
 import ServiceDetails from "./components/ServiceDeatails/container/ServiceDetails";
 import { GlobalStateProvider } from "./components/Global/context/GlobalStateProvider";
+import ProfileContainer from "./components/Profile/container/ProfileContainer";
 
 const App = () => {
   const userid = localStorage.getItem("user_id");
@@ -35,6 +36,7 @@ const App = () => {
             <Route path="/detail" element={<PersonalDetailContainer />} />
             <Route path="/blogdetail/:id" element={<BlogContianer />} />
             <Route path="/service/:id" element={<ServiceDetails />} />
+            <Route path="/profile" element={<ProfileContainer />} />
 
             {/* </Route> */}
             {/* <Route element={<PublicRoute />}> */}

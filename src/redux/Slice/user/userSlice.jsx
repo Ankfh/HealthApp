@@ -6,7 +6,7 @@ import {
   LoginUserApi,
   getUser,
 } from "../../../components/Login/api/LoginUserApi";
-import { addUserDetail } from "../../../components/PersonalDetail/api/UserDetailsApis";
+import { addUserDetail, getUserDetails } from "../../../components/PersonalDetail/api/UserDetailsApis";
 
 const baseQuery = fetchBaseQuery({ baseUrl: ` ${baseUrl}/user` });
 
@@ -31,6 +31,11 @@ export const userSlice = createApi({
       query: addUserDetail,
       invalidatesTags: ["User"],
     }),
+    GetUserDetails: builder.query({
+      query: getUserDetails,
+      providesTags: ["User"],
+    }),
+    
     // Add more endpoints as needed
   }),
 });
@@ -40,4 +45,5 @@ export const {
   useLoginUserMutation,
   useGetUserInfoQuery,
   useAddUserDetailMutation,
+  useGetUserDetailsQuery
 } = userSlice;

@@ -4,16 +4,12 @@ import Logout from "./Logout";
 import { useCssContext } from "../../CssContext/context/CssContex";
 import LinkView from "./LinkView";
 import JoinUs from "./JoinUs";
+import { useGlobalState } from "../../Global/context/GlobalStateProvider";
+import ProfileIcon from "./ProfileIcon";
 
 const Navbar = (props) => {
   const { color } = useCssContext();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [selectedTab, setSelectedTab] = useState("");
-
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-    setSelectedTab(""); // Optionally, reset the selected tab
-  };
+  const { isLoggedIn, setisLoggedIn } = useGlobalState();
 
   return (
     <div className="fixed w-full z-[99]">
@@ -23,19 +19,29 @@ const Navbar = (props) => {
         </div>
         <LinkView
           {...props}
-          isLoggedIn={isLoggedIn}
-          setIsLoggedIn={setIsLoggedIn}
-          selectedTab={selectedTab}
-          setSelectedTab={setSelectedTab}
+          selectedTab={props.selectedTab}
+          setSelectedTab={props.setselectedTab}
         />
         <div className="flex justify-center w-full">
           <JoinUs {...props} />
         </div>
-        {isLoggedIn && (
-          <div>
-            <Logout logoutClick={handleLogout} bgColor={color.button_bg} />
+        <div>
+          <Logout
+            logoutClick={props.logoutClick}
+            isLoggedIn={isLoggedIn}
+            setisLoggedIn={setisLoggedIn}
+            bgColor={color.button_bg}
+          />
+        </div>
+        {props.nameFirst ? (
+          <div
+            className="cursor-pointer"
+            onClick={() => props.navigate("/profile")}
+          >
+            {" "}
+            <ProfileIcon {...props} />{" "}
           </div>
-        )}
+        ) : null}
       </div>
     </div>
   );

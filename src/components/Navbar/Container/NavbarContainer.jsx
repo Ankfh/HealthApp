@@ -8,12 +8,18 @@ import logo from "../../../assets/logo.png";
 
 const NavbarContainer = () => {
   const { darkMode, toggleTheme } = UseDArkTheme();
-  const { setselectedTab, selectedTab } = useGlobalState();
+  const { setselectedTab, selectedTab, isLoggedIn, setisLoggedIn } =
+    useGlobalState();
   const navigate = useNavigate();
   const logoutClick = () => {
-    oNlogoutClick(navigate);
+    if (isLoggedIn) {
+      oNlogoutClick(navigate);
+      setisLoggedIn(false);
+    } else {
+      navigate("/login");
+    }
   };
-  const capital =
+  const nameFirst =
     localStorage.getItem("user_name")?.trim()?.charAt(0)?.toUpperCase() ?? null;
 
   const buttonClick = () => {
@@ -29,6 +35,7 @@ const NavbarContainer = () => {
       selectedTab={selectedTab}
       navigate={navigate}
       buttonClick={buttonClick}
+      nameFirst={nameFirst}
     />
   );
 };

@@ -7,7 +7,7 @@ const Logout = (props) => {
       <MuiButton
         variant="contained"
         type="text"
-        title={"LogOut"}
+        title={props.isLoggedIn?"LogOut":'LogIn'}
         size={"small"}
         onClick={props.logoutClick}
         bgColor={props.bgColor}

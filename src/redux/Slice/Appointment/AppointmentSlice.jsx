@@ -1,7 +1,10 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { baseUrl } from "../../../BaseURl/BaseUrl";
 
-import { createAppointment } from "../../../components/Appointment/Api/AppointmentApi";
+import {
+  createAppointment,
+  getAppointmentById,
+} from "../../../components/Appointment/Api/AppointmentApi";
 
 const baseQuery = fetchBaseQuery({ baseUrl: `${baseUrl}/appointment` });
 
@@ -19,16 +22,16 @@ export const appointmentSlice = createApi({
     //   providesTags: ["Appointment"],
     //   refetchOnMountOrArgChange: true,
     // }),
-    // getAppointmentById: builder.query({
-    //   query: (id) => `/${id}`,
-    //   providesTags: ["Appointment"],
-    //   refetchOnMountOrArgChange: true,
-    // }),
+    getAppointmentById: builder.query({
+      query: getAppointmentById,
+      providesTags: ["Appointment"],
+      refetchOnMountOrArgChange: true,
+    }),
   }),
 });
 
 export const {
   useAddAppointmentMutation,
   //   useGetAllAppointmentsQuery,
-  //   useGetAppointmentByIdQuery
+  useGetAppointmentByIdQuery,
 } = appointmentSlice;

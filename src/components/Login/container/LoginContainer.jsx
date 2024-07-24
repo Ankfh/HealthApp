@@ -9,10 +9,13 @@ import { useLoginUserMutation } from "../../../redux/Slice/user/userSlice.jsx";
 import { useNavigate } from "react-router-dom";
 import LoginFormUI from "../view/LoginFormUI.jsx";
 import LoginUI from "../view/LoginUI.jsx";
+import { useGlobalState } from "../../Global/context/GlobalStateProvider.jsx";
 
 const LoginContainer = () => {
   const [LoginUser, { isLoading }] = useLoginUserMutation();
   const { darkMode, toggleTheme } = UseDArkTheme();
+  const {  isLoggedIn, setisLoggedIn } =
+  useGlobalState();
   const navigate = useNavigate();
   const {
     control,
@@ -41,6 +44,7 @@ const LoginContainer = () => {
         localStorage.setItem("user_email", data.data?.email);
         localStorage.setItem("user_id", data.data?._id);
         localStorage.setItem("user_name", data.data?.userName);
+        setisLoggedIn(true)
         navigate("/");
       }
       console.log(isLoading, "isLoading");

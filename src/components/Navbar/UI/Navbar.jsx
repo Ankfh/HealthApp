@@ -10,6 +10,16 @@ import ProfileIcon from "./ProfileIcon";
 const Navbar = (props) => {
   const { color } = useCssContext();
   const { isLoggedIn, setisLoggedIn } = useGlobalState();
+  const [dropdownVisible, setDropdownVisible] = useState(false);
+
+  const handleProfileClick = () => {
+    props.navigate("/profile");
+  };
+
+  const handleLogoutClick = () => {
+    setisLoggedIn(false);
+    props.logoutClick();
+  };
 
   return (
     <div className="fixed w-full z-[99]">
@@ -25,23 +35,40 @@ const Navbar = (props) => {
         <div className="flex justify-center w-full">
           <JoinUs {...props} />
         </div>
-        <div>
+        {/* <div>
           <Logout
             logoutClick={props.logoutClick}
             isLoggedIn={isLoggedIn}
             setisLoggedIn={setisLoggedIn}
             bgColor={color.button_bg}
           />
-        </div>
-        {props.nameFirst ? (
-          <div
-            className="cursor-pointer"
-            onClick={() => props.navigate("/profile")}
-          >
-            {" "}
-            <ProfileIcon {...props} />{" "}
+        </div> */}
+        {props.nameFirst && (
+          <div className="relative mr-10">
+            <div
+              className="cursor-pointer"
+              onClick={() => setDropdownVisible(!dropdownVisible)}
+            >
+              <ProfileIcon {...props} />
+            </div>
+            {dropdownVisible && (
+              <div className="absolute right-0 mt-5 w-40 bg-orange-600 rounded-md shadow-lg">
+                <div
+                  className="py-2 px-4 cursor-pointer hover:text-white"
+                  onClick={handleProfileClick}
+                >
+                  Profile
+                </div>
+                <div
+                  className="py-2 px-4 cursor-pointer hover:text-white"
+                  onClick={handleLogoutClick}
+                >
+                  Logout
+                </div>
+              </div>
+            )}
           </div>
-        ) : null}
+        )}
       </div>
     </div>
   );

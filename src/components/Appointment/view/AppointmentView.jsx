@@ -1,6 +1,7 @@
 import React from "react";
 import MuiButton from "../../shared/Button/UI/MuiButton";
 import CalendarInputField from "../../shared/CalenderInput/view/CalenderInputView";
+import Logout from "../../Navbar/UI/Logout";
 
 const AppointmentView = (props) => {
   return (
@@ -12,7 +13,6 @@ const AppointmentView = (props) => {
               Schedule your free consultation.
             </h2>
             <div className="text-center">
-                
               <CalendarInputField
                 name="date"
                 control={props.control}
